@@ -36,6 +36,12 @@ const createBot = (): void => {
 	bot.once('end', () => void reconnect());
 
 	bot.once('spawn', () => {
+        	bot.chat('/register 247DontHack');
+		await sleep(1000);
+	        bot.chat('/login 247DontHack');
+
+	await sleep(1000); // Ensure there's a delay before starting actions
+
 		const changePos = async (): Promise<void> => {
 			const lastAction = getRandom(CONFIG.action.commands) as Mineflayer.ControlState;
 			const halfChance: boolean = Math.random() < 0.5? true : false; // 50% chance to sprint
